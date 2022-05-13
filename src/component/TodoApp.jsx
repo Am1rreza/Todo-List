@@ -23,7 +23,7 @@ const TodoApp = () => {
   };
 
   const completeTodo = (id) => {
-    const index = todos.findIndex((todo) => todo.id == id);
+    const index = todos.findIndex((todo) => todo.id === id);
 
     const selectedTodo = { ...todos[index] };
     selectedTodo.isCompleted = !selectedTodo.isCompleted;
@@ -34,12 +34,12 @@ const TodoApp = () => {
   };
 
   const deleteTodo = (id) => {
-    const filteredTodos = todos.filter((todo) => todo.id != id);
+    const filteredTodos = todos.filter((todo) => todo.id !== id);
     setTodos(filteredTodos);
   };
 
   const updateTodo = (id, newValue) => {
-    const index = todos.findIndex((todo) => todo.id == id);
+    const index = todos.findIndex((todo) => todo.id === id);
 
     const selectedTodo = { ...todos[index] };
     selectedTodo.text = newValue;
@@ -50,9 +50,9 @@ const TodoApp = () => {
   };
 
   const filterTodos = (status) => {
-    if (status == "All") {
+    if (status === "All") {
       setFilteredTodos(todos);
-    } else if (status == "Completed") {
+    } else if (status === "Completed") {
       setFilteredTodos(todos.filter((t) => t.isCompleted));
     } else {
       setFilteredTodos(todos.filter((t) => !t.isCompleted));
